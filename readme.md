@@ -12,3 +12,5 @@ Team Dorime:
 Project's description can be found in description.md
 
 Project's schedule can be found in schedule.md
+
+Project's Documentation can be found [HERE](https://drive.google.com/open?id=0B7vSADbvI_OnbVhMV0dsc2RiX2s)
