@@ -2,6 +2,9 @@
 #define REGISTRATION_H
 
 #include <QDialog>
+#include <QtSql>
+#include <QtCore>
+#include <QMessageBox>
 
 namespace Ui {
 class Registration;
@@ -14,6 +17,9 @@ class Registration : public QDialog
 public:
     explicit Registration(QWidget *parent = 0);
     ~Registration();
+
+private slots:
+    void on_pushButton_2_clicked();
 
 private:
     Ui::Registration *ui;

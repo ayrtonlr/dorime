@@ -2,6 +2,9 @@
 #define ALLUSERS_H
 
 #include <QDialog>
+#include <QtSql>
+#include <QtCore>
+#include <QMessageBox>
 
 namespace Ui {
 class AllUsers;
@@ -15,8 +18,12 @@ public:
     explicit AllUsers(QWidget *parent = 0);
     ~AllUsers();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::AllUsers *ui;
+    QSqlTableModel *model;
 };
 
 #endif // ALLUSERS_H

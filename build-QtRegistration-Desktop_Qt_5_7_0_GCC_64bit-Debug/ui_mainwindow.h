@@ -87,7 +87,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Dorime", 0));
         pushButton->setText(QApplication::translate("MainWindow", "Register", 0));
         pushButton_2->setText(QApplication::translate("MainWindow", "All Users", 0));
         pushButton_3->setText(QApplication::translate("MainWindow", "RUN", 0));

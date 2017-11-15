@@ -12,19 +12,19 @@ int main(int argc, char *argv[])
     db.setPort(3306);
     db.setDatabaseName("/home/ayrton/dorime/QtRegistration/users.db");
     db.setUserName("root");
-    //db.setPassword("A");
 
     if(db.open())
     {
-       qDebug() << "Sucesso ao abrir" ;
+       qDebug() << "Opened" ;
     }
     else
     {
-        qDebug() << db.lastError().text();
+        qDebug() <<  "Error: " << db.lastError().text();
         qApp -> quit();
     }
 
-
+    //showing data
+    /*
     QSqlQuery query("SELECT * FROM people");
 
     if(query.exec())
@@ -39,12 +39,34 @@ int main(int argc, char *argv[])
         qDebug() <<  "Erro: " << db.lastError().text();
     }
 
+    //adding data
+
     /*
-    int idName = query.record().indexOf("name");
-    while (query.next())
+    QString squery = "INSERT INTO people (ids,name)"
+                     "VALUES (NULL,:first)";
+    QSqlQuery qry;
+
+
+
+    qry.prepare(squery);
+
+
+    qry.bindValue(":first","ads");
+    qry.exec();
+
+
+    //qry.bindValue(":email","rt@pedro");
+   // qry.bindValue(":password","45lok7");
+   // qry.bindValue(":hour1","1700");
+   // qry.bindValue(":hour2","1800");
+
+    if(qry.exec())
     {
-       QString name = query.value(idName).toString();
-       qDebug() << name;
+        qDebug() <<  "Query inserted ";
+    }
+    else
+    {
+        qDebug() <<  "Erro: " << db.lastError().text();
     }
     */
 

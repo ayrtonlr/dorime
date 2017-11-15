@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Registration</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
@@ -106,10 +106,10 @@
         <widget class="QLineEdit" name="lineEdit_5"/>
        </item>
        <item>
-        <widget class="QTimeEdit" name="timeEdit"/>
+        <widget class="QLineEdit" name="lineEdit_6"/>
        </item>
        <item>
-        <widget class="QTimeEdit" name="timeEdit_2"/>
+        <widget class="QLineEdit" name="lineEdit_7"/>
        </item>
       </layout>
      </item>

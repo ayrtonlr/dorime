@@ -20,7 +20,6 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QTimeEdit>
 #include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
@@ -45,8 +44,8 @@ public:
     QLineEdit *lineEdit_3;
     QLineEdit *lineEdit_4;
     QLineEdit *lineEdit_5;
-    QTimeEdit *timeEdit;
-    QTimeEdit *timeEdit_2;
+    QLineEdit *lineEdit_6;
+    QLineEdit *lineEdit_7;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer;
     QHBoxLayout *horizontalLayout_2;
@@ -136,15 +135,15 @@ public:
 
         verticalLayout->addWidget(lineEdit_5);
 
-        timeEdit = new QTimeEdit(Registration);
-        timeEdit->setObjectName(QStringLiteral("timeEdit"));
+        lineEdit_6 = new QLineEdit(Registration);
+        lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
 
-        verticalLayout->addWidget(timeEdit);
+        verticalLayout->addWidget(lineEdit_6);
 
-        timeEdit_2 = new QTimeEdit(Registration);
-        timeEdit_2->setObjectName(QStringLiteral("timeEdit_2"));
+        lineEdit_7 = new QLineEdit(Registration);
+        lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
 
-        verticalLayout->addWidget(timeEdit_2);
+        verticalLayout->addWidget(lineEdit_7);
 
 
         horizontalLayout->addLayout(verticalLayout);
@@ -185,7 +184,7 @@ public:
 
     void retranslateUi(QDialog *Registration)
     {
-        Registration->setWindowTitle(QApplication::translate("Registration", "Dialog", 0));
+        Registration->setWindowTitle(QApplication::translate("Registration", "Registration", 0));
         label_2->setText(QApplication::translate("Registration", "Register", 0));
         label->setText(QApplication::translate("Registration", "Name", 0));
         label_3->setText(QApplication::translate("Registration", "Password", 0));

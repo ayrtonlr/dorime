@@ -68,13 +68,14 @@ public:
 
 
         retranslateUi(Run);
+        QObject::connect(pushButton, SIGNAL(clicked()), Run, SLOT(reject()));
 
         QMetaObject::connectSlotsByName(Run);
     } // setupUi
 
     void retranslateUi(QDialog *Run)
     {
-        Run->setWindowTitle(QApplication::translate("Run", "Dialog", 0));
+        Run->setWindowTitle(QApplication::translate("Run", "Run Program", 0));
         label->setText(QApplication::translate("Run", "Running...", 0));
         pushButton->setText(QApplication::translate("Run", "Stop", 0));
     } // retranslateUi

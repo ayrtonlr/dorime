@@ -17,18 +17,15 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     registration.cpp \
-    edit.cpp \
     run.cpp \
     allusers.cpp
 
 HEADERS  += mainwindow.h \
     registration.h \
-    edit.h \
     run.h \
     allusers.h
 
 FORMS    += mainwindow.ui \
     registration.ui \
-    edit.ui \
     run.ui \
     allusers.ui

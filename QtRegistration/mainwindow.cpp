@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "registration.h"
-#include "edit.h"
 #include "run.h"
 #include "allusers.h"
 
