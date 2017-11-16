@@ -5,6 +5,7 @@
 #include <QtSql>
 #include <QtCore>
 #include <QMessageBox>
+#include <QDebug>
 
 namespace Ui {
 class Registration;

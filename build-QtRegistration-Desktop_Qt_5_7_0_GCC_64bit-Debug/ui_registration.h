@@ -20,6 +20,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTimeEdit>
 #include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
@@ -44,8 +45,8 @@ public:
     QLineEdit *lineEdit_3;
     QLineEdit *lineEdit_4;
     QLineEdit *lineEdit_5;
-    QLineEdit *lineEdit_6;
-    QLineEdit *lineEdit_7;
+    QTimeEdit *timeEdit_2;
+    QTimeEdit *timeEdit;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer;
     QHBoxLayout *horizontalLayout_2;
@@ -135,15 +136,15 @@ public:
 
         verticalLayout->addWidget(lineEdit_5);
 
-        lineEdit_6 = new QLineEdit(Registration);
-        lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
+        timeEdit_2 = new QTimeEdit(Registration);
+        timeEdit_2->setObjectName(QStringLiteral("timeEdit_2"));
 
-        verticalLayout->addWidget(lineEdit_6);
+        verticalLayout->addWidget(timeEdit_2);
 
-        lineEdit_7 = new QLineEdit(Registration);
-        lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
+        timeEdit = new QTimeEdit(Registration);
+        timeEdit->setObjectName(QStringLiteral("timeEdit"));
 
-        verticalLayout->addWidget(lineEdit_7);
+        verticalLayout->addWidget(timeEdit);
 
 
         horizontalLayout->addLayout(verticalLayout);

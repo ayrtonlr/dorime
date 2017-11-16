@@ -47,7 +47,7 @@ void AllUsers::on_pushButton_2_clicked()
     }
     else
     {
-        QMessageBox::warning(this, "Fail",
+        QMessageBox::warning(this, "Error",
                              "Error:<br><b>" + delet.lastError().text());
         this->close();
     }
