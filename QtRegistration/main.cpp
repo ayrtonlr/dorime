@@ -15,60 +15,13 @@ int main(int argc, char *argv[])
 
     if(db.open())
     {
-       qDebug() << "Opened" ;
+        qDebug() << "Opened" ;
     }
     else
     {
         qDebug() <<  "Error: " << db.lastError().text();
         qApp -> quit();
     }
-
-    //showing data
-    /*
-    QSqlQuery query("SELECT * FROM people");
-
-    if(query.exec())
-    {
-        while (query.next())
-        {
-           qDebug() << query.value(0).toString() << " -- " << query.value(1).toString();
-        }
-    }
-    else
-    {
-        qDebug() <<  "Erro: " << db.lastError().text();
-    }
-
-    //adding data
-
-    /*
-    QString squery = "INSERT INTO people (ids,name)"
-                     "VALUES (NULL,:first)";
-    QSqlQuery qry;
-
-
-
-    qry.prepare(squery);
-
-
-    qry.bindValue(":first","ads");
-    qry.exec();
-
-
-    //qry.bindValue(":email","rt@pedro");
-   // qry.bindValue(":password","45lok7");
-   // qry.bindValue(":hour1","1700");
-   // qry.bindValue(":hour2","1800");
-
-    if(qry.exec())
-    {
-        qDebug() <<  "Query inserted ";
-    }
-    else
-    {
-        qDebug() <<  "Erro: " << db.lastError().text();
-    }
-    */
 
     MainWindow w;
     w.show();

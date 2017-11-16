@@ -6,6 +6,7 @@ Registration::Registration(QWidget *parent) :
     ui(new Ui::Registration)
 {
     ui->setupUi(this);
+    setFixedSize(geometry().width(), geometry().height());
 }
 
 Registration::~Registration()
@@ -34,11 +35,17 @@ void Registration::on_pushButton_2_clicked()
 
     #endif
            if(qry.exec())
+           {
                QMessageBox::information(this, "Success",
                                         "New user registered!");
+               this->close();
+           }
            else
+           {
                QMessageBox::warning(this, "Fail",
                                     "Error:<br><b>" + qry.lastError().text());
+               this->close();
+           }
      }
 
 }

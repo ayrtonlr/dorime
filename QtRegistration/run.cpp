@@ -6,6 +6,7 @@ Run::Run(QWidget *parent) :
     ui(new Ui::Run)
 {
     ui->setupUi(this);
+    setFixedSize(geometry().width(), geometry().height());
 }
 
 Run::~Run()
