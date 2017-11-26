@@ -4,6 +4,15 @@
 #include <QMainWindow>
 #include <QtCore>
 #include <QMessageBox>
+#include "ui_chat.h"
+
+#include <QDialog>
+
+#include <qbluetoothserviceinfo.h>
+#include <qbluetoothsocket.h>
+#include <qbluetoothhostinfo.h>
+
+#include <QDebug>
 
 namespace Ui {
 class MainWindow;

@@ -40,11 +40,6 @@ int main(int argc, char *argv[])
         qApp -> quit();
     }
 
-
-   // Chat d;
-    //QObject::connect(&d, SIGNAL(accepted()), &a, SLOT(quit()));
-    //d.show();
-
     MainWindow w;
     w.show();
 
