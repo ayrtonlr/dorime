@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "registration.h"
-#include "run.h"
+#include "chat.h"
 #include "allusers.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -33,7 +33,7 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    Run setRun;
-    setRun.setModal(true);
-    setRun.exec();
+    Chat setChat;
+    setChat.setModal(true);
+    setChat.exec();
 }

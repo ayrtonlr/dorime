@@ -2,10 +2,27 @@
 #include <QApplication>
 #include <QtSql>
 #include <QDebug>
+#include <QSettings>
+#include "httplistener.h"
+#include "httprequesthandler.h"
+#include <QFile>
+#include <QDir>
+#include <QString>
+#include "helloworldcontroller.h"
+
+using namespace stefanfrings;
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    // Load the configuration file
+    QSettings* listenerSettings= new QSettings("../QtRegistration/etc/webapp1.ini",QSettings::IniFormat,&a);
+    listenerSettings->beginGroup("listener");
+
+    // Start the HTTP server
+    new HttpListener(listenerSettings,new HelloWorldController(&a),&a);
+
     QSqlDatabase db;
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setHostName("127.0.0.1");
@@ -22,6 +39,11 @@ int main(int argc, char *argv[])
         qDebug() <<  "Error: " << db.lastError().text();
         qApp -> quit();
     }
+
+
+   // Chat d;
+    //QObject::connect(&d, SIGNAL(accepted()), &a, SLOT(quit()));
+    //d.show();
 
     MainWindow w;
     w.show();

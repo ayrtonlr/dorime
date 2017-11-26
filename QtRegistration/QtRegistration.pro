@@ -4,8 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-QT       += sql
+QT       += core gui network sql bluetooth widgets
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,15 +17,31 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     registration.cpp \
-    run.cpp \
-    allusers.cpp
+    allusers.cpp \
+    helloworldcontroller.cpp \
+    chat.cpp \
+    chatclient.cpp \
+    chatserver.cpp
 
 HEADERS  += mainwindow.h \
     registration.h \
-    run.h \
-    allusers.h
+    allusers.h \
+    helloworldcontroller.h \
+    chat.h \
+    chatclient.h \
+    chatserver.h
 
 FORMS    += mainwindow.ui \
     registration.ui \
-    run.ui \
-    allusers.ui
+    allusers.ui \
+    chat.ui
+
+RESOURCES +=
+
+DISTFILES +=
+
+include(../QtWebApp/QtWebApp/httpserver/httpserver.pri)
+OTHER_FILES += etc/webapp1.ini
+
+target.path = $$[QT_INSTALL_EXAMPLES]/bluetooth/btchat
+INSTALLS += target

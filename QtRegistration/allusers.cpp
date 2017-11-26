@@ -20,7 +20,7 @@ AllUsers::~AllUsers()
 
 void AllUsers::on_pushButton_2_clicked()
 {
-    int k = 0 ;
+    int k = 0;
     int ro = 0;
     QModelIndexList selectedList = ui->tableView->selectionModel()->selectedIndexes();
 
