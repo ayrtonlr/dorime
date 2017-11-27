@@ -39,7 +39,7 @@
 ****************************************************************************/
 
 #include "chatserver.h"
-
+#include "chatclient.h"
 #include <qbluetoothserver.h>
 #include <qbluetoothsocket.h>
 #include <qbluetoothlocaldevice.h>
@@ -182,13 +182,55 @@ void ChatServer::clientDisconnected()
 //! [readSocket]
 void ChatServer::readSocket()
 {
-
+    QString str,hour1,hour2;
+    QTime t;
     QBluetoothSocket *socket = qobject_cast<QBluetoothSocket *>(sender());
     if (!socket)
         return;
     QByteArray line = socket->readLine().trimmed();
-    emit messageReceived(socket->peerName(),
-                         QString::fromUtf8(line.constData(), line.length()));
+    //emit messageReceived(socket->peerName(),
+                        //QString::fromUtf8(line.constData(), line.length()));
+    str = line.data();
+    QSqlQuery query;
+    query.prepare("SELECT name,hour1,hour2 FROM people WHERE name = (:name)");
+    query.bindValue(":name", str);
+
+
+
+    if (query.exec())
+    {
+       if (!query.next())
+       {
+           emit sendMessage("User not registered");
+
+       }
+       else
+       {
+           hour1 = query.value(1).toString();
+           hour2 = query.value(2).toString();
+           if((hour1 < t.currentTime().toString()) &&
+                   (t.currentTime().toString() < hour2 ))
+           {
+               QSqlQuery qry;
+               qry.prepare("UPDATE people SET password=(:logged) WHERE name = (:name)");
+               qry.bindValue(":name", str);
+               qry.bindValue(":logged", 1);
+               if (qry.exec())
+               {
+                   emit sendMessage("Logged");
+               }
+               else
+               {
+                   emit sendMessage("User not saved");
+               }
+           }
+           else
+           {
+               emit sendMessage("User not authorized");
+           }
+
+       }
+    }
 
 }
 //! [readSocket]

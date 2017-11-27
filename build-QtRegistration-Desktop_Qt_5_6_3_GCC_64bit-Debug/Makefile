@@ -53,7 +53,6 @@ SOURCES       = ../QtRegistration/main.cpp \
 		../QtRegistration/registration.cpp \
 		../QtRegistration/allusers.cpp \
 		../QtRegistration/helloworldcontroller.cpp \
-		../QtRegistration/chat.cpp \
 		../QtRegistration/chatclient.cpp \
 		../QtRegistration/chatserver.cpp \
 		../QtWebApp/QtWebApp/httpserver/httpglobal.cpp \
@@ -70,7 +69,6 @@ SOURCES       = ../QtRegistration/main.cpp \
 		moc_registration.cpp \
 		moc_allusers.cpp \
 		moc_helloworldcontroller.cpp \
-		moc_chat.cpp \
 		moc_chatclient.cpp \
 		moc_chatserver.cpp \
 		moc_httplistener.cpp \
@@ -84,7 +82,6 @@ OBJECTS       = main.o \
 		registration.o \
 		allusers.o \
 		helloworldcontroller.o \
-		chat.o \
 		chatclient.o \
 		chatserver.o \
 		httpglobal.o \
@@ -102,7 +99,6 @@ OBJECTS       = main.o \
 		moc_registration.o \
 		moc_allusers.o \
 		moc_helloworldcontroller.o \
-		moc_chat.o \
 		moc_chatclient.o \
 		moc_chatserver.o \
 		moc_httplistener.o \
@@ -251,7 +247,6 @@ DIST          = ../../Qt5.6.3/5.6.3/gcc_64/mkspecs/features/spec_pre.prf \
 		../QtRegistration/registration.h \
 		../QtRegistration/allusers.h \
 		../QtRegistration/helloworldcontroller.h \
-		../QtRegistration/chat.h \
 		../QtRegistration/chatclient.h \
 		../QtRegistration/chatserver.h \
 		../QtWebApp/QtWebApp/httpserver/httpglobal.h \
@@ -269,7 +264,6 @@ DIST          = ../../Qt5.6.3/5.6.3/gcc_64/mkspecs/features/spec_pre.prf \
 		../QtRegistration/registration.cpp \
 		../QtRegistration/allusers.cpp \
 		../QtRegistration/helloworldcontroller.cpp \
-		../QtRegistration/chat.cpp \
 		../QtRegistration/chatclient.cpp \
 		../QtRegistration/chatserver.cpp \
 		../QtWebApp/QtWebApp/httpserver/httpglobal.cpp \
@@ -291,7 +285,7 @@ TARGET        = QtRegistration
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h ui_registration.h ui_allusers.h ui_chat.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_registration.h ui_allusers.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../QtRegistration/QtRegistration.pro ../../Qt5.6.3/5.6.3/gcc_64/mkspecs/linux-g++/qmake.conf ../../Qt5.6.3/5.6.3/gcc_64/mkspecs/features/spec_pre.prf \
@@ -595,9 +589,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../QtRegistration/mainwindow.h ../QtRegistration/registration.h ../QtRegistration/allusers.h ../QtRegistration/helloworldcontroller.h ../QtRegistration/chat.h ../QtRegistration/chatclient.h ../QtRegistration/chatserver.h ../QtWebApp/QtWebApp/httpserver/httpglobal.h ../QtWebApp/QtWebApp/httpserver/httplistener.h ../QtWebApp/QtWebApp/httpserver/httpconnectionhandler.h ../QtWebApp/QtWebApp/httpserver/httpconnectionhandlerpool.h ../QtWebApp/QtWebApp/httpserver/httprequest.h ../QtWebApp/QtWebApp/httpserver/httpresponse.h ../QtWebApp/QtWebApp/httpserver/httpcookie.h ../QtWebApp/QtWebApp/httpserver/httprequesthandler.h ../QtWebApp/QtWebApp/httpserver/httpsession.h ../QtWebApp/QtWebApp/httpserver/httpsessionstore.h ../QtWebApp/QtWebApp/httpserver/staticfilecontroller.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../QtRegistration/main.cpp ../QtRegistration/mainwindow.cpp ../QtRegistration/registration.cpp ../QtRegistration/allusers.cpp ../QtRegistration/helloworldcontroller.cpp ../QtRegistration/chat.cpp ../QtRegistration/chatclient.cpp ../QtRegistration/chatserver.cpp ../QtWebApp/QtWebApp/httpserver/httpglobal.cpp ../QtWebApp/QtWebApp/httpserver/httplistener.cpp ../QtWebApp/QtWebApp/httpserver/httpconnectionhandler.cpp ../QtWebApp/QtWebApp/httpserver/httpconnectionhandlerpool.cpp ../QtWebApp/QtWebApp/httpserver/httprequest.cpp ../QtWebApp/QtWebApp/httpserver/httpresponse.cpp ../QtWebApp/QtWebApp/httpserver/httpcookie.cpp ../QtWebApp/QtWebApp/httpserver/httprequesthandler.cpp ../QtWebApp/QtWebApp/httpserver/httpsession.cpp ../QtWebApp/QtWebApp/httpserver/httpsessionstore.cpp ../QtWebApp/QtWebApp/httpserver/staticfilecontroller.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../QtRegistration/mainwindow.ui ../QtRegistration/registration.ui ../QtRegistration/allusers.ui ../QtRegistration/chat.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../QtRegistration/mainwindow.h ../QtRegistration/registration.h ../QtRegistration/allusers.h ../QtRegistration/helloworldcontroller.h ../QtRegistration/chatclient.h ../QtRegistration/chatserver.h ../QtWebApp/QtWebApp/httpserver/httpglobal.h ../QtWebApp/QtWebApp/httpserver/httplistener.h ../QtWebApp/QtWebApp/httpserver/httpconnectionhandler.h ../QtWebApp/QtWebApp/httpserver/httpconnectionhandlerpool.h ../QtWebApp/QtWebApp/httpserver/httprequest.h ../QtWebApp/QtWebApp/httpserver/httpresponse.h ../QtWebApp/QtWebApp/httpserver/httpcookie.h ../QtWebApp/QtWebApp/httpserver/httprequesthandler.h ../QtWebApp/QtWebApp/httpserver/httpsession.h ../QtWebApp/QtWebApp/httpserver/httpsessionstore.h ../QtWebApp/QtWebApp/httpserver/staticfilecontroller.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../QtRegistration/main.cpp ../QtRegistration/mainwindow.cpp ../QtRegistration/registration.cpp ../QtRegistration/allusers.cpp ../QtRegistration/helloworldcontroller.cpp ../QtRegistration/chatclient.cpp ../QtRegistration/chatserver.cpp ../QtWebApp/QtWebApp/httpserver/httpglobal.cpp ../QtWebApp/QtWebApp/httpserver/httplistener.cpp ../QtWebApp/QtWebApp/httpserver/httpconnectionhandler.cpp ../QtWebApp/QtWebApp/httpserver/httpconnectionhandlerpool.cpp ../QtWebApp/QtWebApp/httpserver/httprequest.cpp ../QtWebApp/QtWebApp/httpserver/httpresponse.cpp ../QtWebApp/QtWebApp/httpserver/httpcookie.cpp ../QtWebApp/QtWebApp/httpserver/httprequesthandler.cpp ../QtWebApp/QtWebApp/httpserver/httpsession.cpp ../QtWebApp/QtWebApp/httpserver/httpsessionstore.cpp ../QtWebApp/QtWebApp/httpserver/staticfilecontroller.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../QtRegistration/mainwindow.ui ../QtRegistration/registration.ui ../QtRegistration/allusers.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -622,9 +616,9 @@ benchmark: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_registration.cpp moc_allusers.cpp moc_helloworldcontroller.cpp moc_chat.cpp moc_chatclient.cpp moc_chatserver.cpp moc_httplistener.cpp moc_httpconnectionhandler.cpp moc_httpconnectionhandlerpool.cpp moc_httprequesthandler.cpp moc_httpsessionstore.cpp moc_staticfilecontroller.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_registration.cpp moc_allusers.cpp moc_helloworldcontroller.cpp moc_chatclient.cpp moc_chatserver.cpp moc_httplistener.cpp moc_httpconnectionhandler.cpp moc_httpconnectionhandlerpool.cpp moc_httprequesthandler.cpp moc_httpsessionstore.cpp moc_staticfilecontroller.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_registration.cpp moc_allusers.cpp moc_helloworldcontroller.cpp moc_chat.cpp moc_chatclient.cpp moc_chatserver.cpp moc_httplistener.cpp moc_httpconnectionhandler.cpp moc_httpconnectionhandlerpool.cpp moc_httprequesthandler.cpp moc_httpsessionstore.cpp moc_staticfilecontroller.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_registration.cpp moc_allusers.cpp moc_helloworldcontroller.cpp moc_chatclient.cpp moc_chatserver.cpp moc_httplistener.cpp moc_httpconnectionhandler.cpp moc_httpconnectionhandlerpool.cpp moc_httprequesthandler.cpp moc_httpsessionstore.cpp moc_staticfilecontroller.cpp
 moc_mainwindow.cpp: ../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QMainWindow \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qwidget.h \
@@ -845,6 +839,75 @@ moc_mainwindow.cpp: ../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QMainWindow \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QMessageBox \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qdialog.h \
+		ui_mainwindow.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QVariant \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QAction \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qaction.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QApplication \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qapplication.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qguiapplication.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qinputmethod.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QButtonGroup \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QGridLayout \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qlayout.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QGroupBox \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qgroupbox.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qframe.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QHeaderView \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qheaderview.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qvalidator.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qslider.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qstyle.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qtabbar.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qrubberband.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QLineEdit \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qlineedit.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qtextcursor.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qtextformat.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qpen.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qtextoption.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QPushButton \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QRadioButton \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qradiobutton.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QStatusBar \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QTextEdit \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qtextedit.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qtextdocument.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QWidget \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothserviceinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothglobal.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothUuid \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothuuid.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QtGlobal \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QMetaType \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QUuid \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QDebug \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothAddress \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothaddress.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QByteArray \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QString \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QList \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QSharedPointer \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothsocket.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetooth.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtNetwork/qabstractsocket.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothhostinfo.h \
 		../QtRegistration/mainwindow.h
 	/home/ayrton/Qt5.6.3/5.6.3/gcc_64/bin/moc $(DEFINES) -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/mkspecs/linux-g++ -I/home/ayrton/dorime/QtRegistration -I/home/ayrton/dorime/QtWebApp/QtWebApp/httpserver -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtWidgets -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtGui -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtNetwork -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtSql -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtCore -I. ../QtRegistration/mainwindow.h -o moc_mainwindow.cpp
 
@@ -1450,8 +1513,96 @@ moc_helloworldcontroller.cpp: ../QtWebApp/QtWebApp/httpserver/httprequesthandler
 		../QtRegistration/helloworldcontroller.h
 	/home/ayrton/Qt5.6.3/5.6.3/gcc_64/bin/moc $(DEFINES) -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/mkspecs/linux-g++ -I/home/ayrton/dorime/QtRegistration -I/home/ayrton/dorime/QtWebApp/QtWebApp/httpserver -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtWidgets -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtGui -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtNetwork -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtSql -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtCore -I. ../QtRegistration/helloworldcontroller.h -o moc_helloworldcontroller.cpp
 
-moc_chat.cpp: ui_chat.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QDialog \
+moc_chatclient.cpp: ../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothserviceinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothglobal.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qglobal.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qconfig.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfeatures.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsystemdetection.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qprocessordetection.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtypeinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtypetraits.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qisenum.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsysinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlogging.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qflags.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbasicatomic.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qgenericatomic.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_gcc.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv7.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv6.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv5.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_ia64.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_x86.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_unix.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qglobalstatic.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmutex.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qnumeric.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qversiontagging.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothUuid \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothuuid.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QtGlobal \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QMetaType \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmetatype.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbytearray.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qrefcount.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qnamespace.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qarraydata.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstring.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qchar.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringbuilder.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qalgorithms.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobjectdefs.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QUuid \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/quuid.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QDebug \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qdebug.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qhash.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qiterator.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlist.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qhashfunctions.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpair.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbytearraylist.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringlist.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qregexp.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringmatcher.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmap.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtextstream.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qiodevice.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobject.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcoreevent.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qscopedpointer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobject_impl.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlocale.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvariant.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qshareddata.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvector.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpoint.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qset.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothAddress \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothaddress.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QByteArray \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QString \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QList \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QSharedPointer \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsharedpointer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QVariant \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QObject \
+		../QtRegistration/chatclient.h
+	/home/ayrton/Qt5.6.3/5.6.3/gcc_64/bin/moc $(DEFINES) -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/mkspecs/linux-g++ -I/home/ayrton/dorime/QtRegistration -I/home/ayrton/dorime/QtWebApp/QtWebApp/httpserver -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtWidgets -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtGui -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtNetwork -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtSql -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtCore -I. ../QtRegistration/chatclient.h -o moc_chatclient.cpp
+
+moc_chatserver.cpp: ../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QMessageBox \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qdialog.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qwidget.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qwindowdefs.h \
@@ -1572,186 +1723,149 @@ moc_chat.cpp: ui_chat.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QList \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QSharedPointer \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QVariant \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothsocket.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetooth.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtNetwork/qabstractsocket.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothhostinfo.h \
-		../QtRegistration/chat.h
-	/home/ayrton/Qt5.6.3/5.6.3/gcc_64/bin/moc $(DEFINES) -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/mkspecs/linux-g++ -I/home/ayrton/dorime/QtRegistration -I/home/ayrton/dorime/QtWebApp/QtWebApp/httpserver -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtWidgets -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtGui -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtNetwork -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtSql -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtCore -I. ../QtRegistration/chat.h -o moc_chat.cpp
-
-moc_chatclient.cpp: ../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothserviceinfo.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothglobal.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qglobal.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qconfig.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfeatures.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsystemdetection.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qprocessordetection.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcompilerdetection.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtypeinfo.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtypetraits.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qisenum.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsysinfo.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlogging.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qflags.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbasicatomic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qgenericatomic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_cxx11.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_gcc.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_msvc.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv7.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv6.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv5.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_ia64.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_x86.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_unix.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qglobalstatic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmutex.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qnumeric.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qversiontagging.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothUuid \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothuuid.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QtGlobal \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QMetaType \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmetatype.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbytearray.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qrefcount.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qnamespace.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qarraydata.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstring.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qchar.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringbuilder.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvarlengtharray.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcontainerfwd.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qalgorithms.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobjectdefs.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QUuid \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/quuid.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QDebug \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qdebug.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qhash.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qiterator.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlist.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qhashfunctions.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpair.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbytearraylist.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringlist.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qregexp.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringmatcher.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmap.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtextstream.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qiodevice.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobject.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcoreevent.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qscopedpointer.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobject_impl.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlocale.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvariant.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qshareddata.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvector.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpoint.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qset.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcontiguouscache.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothAddress \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothaddress.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QByteArray \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QString \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QList \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QSharedPointer \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsharedpointer.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QVariant \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/QtSql \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/QtSqlDepends \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QtCore \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QtCoreDepends \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qabstractanimation.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qanimationgroup.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpauseanimation.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpropertyanimation.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvariantanimation.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qeasingcurve.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtextcodec.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qendian.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlibraryinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qdatetime.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbuffer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qdir.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfileinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qdiriterator.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfileselector.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QObject \
-		../QtRegistration/chatclient.h
-	/home/ayrton/Qt5.6.3/5.6.3/gcc_64/bin/moc $(DEFINES) -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/mkspecs/linux-g++ -I/home/ayrton/dorime/QtRegistration -I/home/ayrton/dorime/QtWebApp/QtWebApp/httpserver -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtWidgets -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtGui -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtNetwork -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtSql -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtCore -I. ../QtRegistration/chatclient.h -o moc_chatclient.cpp
-
-moc_chatserver.cpp: ../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothserviceinfo.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothglobal.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qglobal.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qconfig.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfeatures.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsystemdetection.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qprocessordetection.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcompilerdetection.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtypeinfo.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtypetraits.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qisenum.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsysinfo.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlogging.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qflags.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbasicatomic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qgenericatomic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_cxx11.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_gcc.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_msvc.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv7.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv6.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv5.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_ia64.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_x86.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_unix.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qglobalstatic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmutex.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qnumeric.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qversiontagging.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothUuid \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothuuid.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QtGlobal \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QMetaType \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmetatype.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbytearray.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qrefcount.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qnamespace.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qarraydata.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstring.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qchar.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringbuilder.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvarlengtharray.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcontainerfwd.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qalgorithms.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobjectdefs.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QUuid \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/quuid.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QDebug \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qdebug.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qhash.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qiterator.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlist.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qhashfunctions.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpair.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbytearraylist.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringlist.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qregexp.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringmatcher.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmap.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtextstream.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qiodevice.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobject.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcoreevent.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qscopedpointer.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobject_impl.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlocale.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvariant.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qshareddata.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvector.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpoint.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qset.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcontiguouscache.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothAddress \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothaddress.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QByteArray \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QString \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QList \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QSharedPointer \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsharedpointer.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QVariant \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QObject \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QStringList \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlockfile.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qloggingcategory.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qprocess.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qresource.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsavefile.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsettings.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstandardpaths.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstorageinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtemporarydir.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QScopedPointer \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtemporaryfile.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qabstractproxymodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qidentityproxymodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringlistmodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qjsonarray.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qjsonvalue.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qjsondocument.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qjsonobject.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qeventloop.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbasictimer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcoreapplication.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmath.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmetaobject.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmimedata.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpointer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsharedmemory.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsignalmapper.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsocketnotifier.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsystemsemaphore.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtimer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtranslator.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qwineventnotifier.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmimedatabase.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmimetype.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfactoryinterface.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlibrary.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qplugin.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpluginloader.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qabstractstate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qabstracttransition.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qeventtransition.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfinalstate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qhistorystate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsignaltransition.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstatemachine.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qexception.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfuture.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfutureinterface.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qrunnable.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qresultstore.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfuturewatcher.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qreadwritelock.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsemaphore.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qthread.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qthreadpool.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qthreadstorage.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qwaitcondition.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qarraydataops.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qarraydatapointer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbitarray.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbytearraymatcher.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcache.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcollator.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcommandlineoption.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcommandlineparser.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcryptographichash.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qelapsedtimer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlinkedlist.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qqueue.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qregularexpression.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstack.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtimeline.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtimezone.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qversionnumber.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qxmlstream.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtcoreversion.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsql.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqldatabase.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqldriver.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqldriverplugin.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlerror.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlfield.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlindex.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlrecord.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlquery.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlresult.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlquerymodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qitemdelegate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qvalidator.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qicon.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qslider.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qstyle.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qtabbar.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qrubberband.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qframe.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qlistview.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qcombobox.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqltablemodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qtsqlversion.h \
 		../QtRegistration/chatserver.h
 	/home/ayrton/Qt5.6.3/5.6.3/gcc_64/bin/moc $(DEFINES) -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/mkspecs/linux-g++ -I/home/ayrton/dorime/QtRegistration -I/home/ayrton/dorime/QtWebApp/QtWebApp/httpserver -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtWidgets -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtGui -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtNetwork -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtSql -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth -I/home/ayrton/Qt5.6.3/5.6.3/gcc_64/include/QtCore -I. ../QtRegistration/chatserver.h -o moc_chatserver.cpp
 
@@ -2383,9 +2497,9 @@ moc_staticfilecontroller.cpp: ../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QCache \
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_registration.h ui_allusers.h ui_chat.h
+compiler_uic_make_all: ui_mainwindow.h ui_registration.h ui_allusers.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_registration.h ui_allusers.h ui_chat.h
+	-$(DEL_FILE) ui_mainwindow.h ui_registration.h ui_allusers.h
 ui_mainwindow.h: ../QtRegistration/mainwindow.ui
 	/home/ayrton/Qt5.6.3/5.6.3/gcc_64/bin/uic ../QtRegistration/mainwindow.ui -o ui_mainwindow.h
 
@@ -2394,9 +2508,6 @@ ui_registration.h: ../QtRegistration/registration.ui
 
 ui_allusers.h: ../QtRegistration/allusers.ui
 	/home/ayrton/Qt5.6.3/5.6.3/gcc_64/bin/uic ../QtRegistration/allusers.ui -o ui_allusers.h
-
-ui_chat.h: ../QtRegistration/chat.ui
-	/home/ayrton/Qt5.6.3/5.6.3/gcc_64/bin/uic ../QtRegistration/chat.ui -o ui_chat.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -2629,11 +2740,75 @@ main.o: ../QtRegistration/main.cpp ../QtRegistration/mainwindow.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QMessageBox \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qdialog.h \
+		ui_mainwindow.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QVariant \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QAction \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qaction.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qactiongroup.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QApplication \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qapplication.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qdesktopwidget.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qguiapplication.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qinputmethod.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QButtonGroup \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QGridLayout \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qlayout.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QGroupBox \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qgroupbox.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qframe.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QHeaderView \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qheaderview.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qvalidator.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qslider.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qstyle.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qtabbar.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qrubberband.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QLineEdit \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qlineedit.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qtextcursor.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qtextformat.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qpen.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qtextoption.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QPushButton \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QRadioButton \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qradiobutton.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QStatusBar \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QTextEdit \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qtextedit.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qtextdocument.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QWidget \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothserviceinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothglobal.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothUuid \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothuuid.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QtGlobal \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QMetaType \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QUuid \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QDebug \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothAddress \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothaddress.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QByteArray \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QString \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QList \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QSharedPointer \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothsocket.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetooth.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtNetwork/qabstractsocket.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothhostinfo.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/QtSql \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/QtSqlDepends \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsql.h \
@@ -2649,33 +2824,18 @@ main.o: ../QtRegistration/main.cpp ../QtRegistration/mainwindow.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlquerymodel.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qitemdelegate.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qstyleoption.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qvalidator.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qslider.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractslider.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qstyle.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qtabbar.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qrubberband.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qframe.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qlistview.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractscrollarea.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qcombobox.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqltablemodel.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qtsqlversion.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QDebug \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QSettings \
 		../QtWebApp/QtWebApp/httpserver/httplistener.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtNetwork/QTcpServer \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtNetwork/qtcpserver.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtNetwork/qabstractsocket.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtNetwork/qhostaddress.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QBasicTimer \
 		../QtWebApp/QtWebApp/httpserver/httpglobal.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QtGlobal \
 		../QtWebApp/QtWebApp/httpserver/httpconnectionhandler.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtNetwork/QSslConfiguration \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtNetwork/qsslconfiguration.h \
@@ -2689,17 +2849,13 @@ main.o: ../QtRegistration/main.cpp ../QtRegistration/mainwindow.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QTimer \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QThread \
 		../QtWebApp/QtWebApp/httpserver/httprequest.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QByteArray \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtNetwork/QHostAddress \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QMap \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QMultiMap \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QTemporaryFile \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QUuid \
 		../QtWebApp/QtWebApp/httpserver/httprequesthandler.h \
 		../QtWebApp/QtWebApp/httpserver/httpresponse.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QString \
 		../QtWebApp/QtWebApp/httpserver/httpcookie.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QList \
 		../QtWebApp/QtWebApp/httpserver/httpconnectionhandlerpool.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QMutex \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QFile \
@@ -2945,11 +3101,14 @@ mainwindow.o: ../QtRegistration/mainwindow.cpp ../QtRegistration/mainwindow.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qlayout.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QGroupBox \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qgroupbox.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qframe.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QHBoxLayout \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QHeaderView \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qheaderview.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractitemview.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qframe.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qstyleoption.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractspinbox.h \
@@ -2959,12 +3118,41 @@ mainwindow.o: ../QtRegistration/mainwindow.cpp ../QtRegistration/mainwindow.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qstyle.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qtabbar.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qrubberband.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QLineEdit \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qlineedit.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qtextcursor.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qtextformat.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qpen.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qtextoption.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QPushButton \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QRadioButton \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qradiobutton.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QStatusBar \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QTextEdit \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qtextedit.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qtextdocument.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QWidget \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothserviceinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothglobal.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothUuid \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothuuid.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QtGlobal \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QMetaType \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QUuid \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QDebug \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothAddress \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothaddress.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QByteArray \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QString \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QList \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QSharedPointer \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothsocket.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetooth.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtNetwork/qabstractsocket.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothhostinfo.h \
 		../QtRegistration/registration.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QDialog \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/QtSql \
@@ -2987,27 +3175,20 @@ mainwindow.o: ../QtRegistration/mainwindow.cpp ../QtRegistration/mainwindow.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqltablemodel.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qtsqlversion.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QDebug \
-		../QtRegistration/chat.h \
-		ui_chat.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothserviceinfo.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothglobal.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothUuid \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothuuid.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QtGlobal \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QMetaType \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QUuid \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothAddress \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothaddress.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QByteArray \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QString \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QList \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QSharedPointer \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothsocket.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetooth.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtNetwork/qabstractsocket.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothhostinfo.h \
-		../QtRegistration/allusers.h
+		../QtRegistration/allusers.h \
+		../QtRegistration/chatserver.h \
+		../QtRegistration/chatclient.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothserver.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothSocket \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothServiceInfo \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothservicediscoveryagent.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothDeviceDiscoveryAgent \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothdevicediscoveryagent.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothDeviceInfo \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothdeviceinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothlocaldevice.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothHostInfo \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QTimer
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../QtRegistration/mainwindow.cpp
 
 registration.o: ../QtRegistration/registration.cpp ../QtRegistration/registration.h \
@@ -3674,9 +3855,100 @@ helloworldcontroller.o: ../QtRegistration/helloworldcontroller.cpp ../QtRegistra
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qdatetime.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o helloworldcontroller.o ../QtRegistration/helloworldcontroller.cpp
 
-chat.o: ../QtRegistration/chat.cpp ../QtRegistration/chat.h \
-		ui_chat.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QDialog \
+chatclient.o: ../QtRegistration/chatclient.cpp ../QtRegistration/chatclient.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothserviceinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothglobal.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qglobal.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qconfig.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfeatures.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsystemdetection.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qprocessordetection.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtypeinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtypetraits.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qisenum.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsysinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlogging.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qflags.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbasicatomic.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qgenericatomic.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_gcc.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv7.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv6.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv5.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_ia64.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_x86.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_unix.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qglobalstatic.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmutex.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qnumeric.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qversiontagging.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothUuid \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothuuid.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QtGlobal \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QMetaType \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmetatype.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbytearray.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qrefcount.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qnamespace.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qarraydata.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstring.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qchar.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringbuilder.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qalgorithms.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobjectdefs.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QUuid \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/quuid.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QDebug \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qdebug.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qhash.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qiterator.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlist.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qhashfunctions.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpair.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbytearraylist.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringlist.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qregexp.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringmatcher.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmap.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtextstream.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qiodevice.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobject.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcoreevent.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qscopedpointer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobject_impl.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlocale.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvariant.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qshareddata.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvector.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpoint.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qset.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothAddress \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothaddress.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QByteArray \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QString \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QList \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QSharedPointer \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsharedpointer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QVariant \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QObject \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothsocket.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetooth.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtNetwork/qabstractsocket.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o chatclient.o ../QtRegistration/chatclient.cpp
+
+chatserver.o: ../QtRegistration/chatserver.cpp ../QtRegistration/chatserver.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/QMessageBox \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qdialog.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qwidget.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qwindowdefs.h \
@@ -3797,206 +4069,150 @@ chat.o: ../QtRegistration/chat.cpp ../QtRegistration/chat.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QList \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QSharedPointer \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QVariant \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothsocket.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetooth.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtNetwork/qabstractsocket.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothhostinfo.h \
-		../QtRegistration/chatserver.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/QtSql \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/QtSqlDepends \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QtCore \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QtCoreDepends \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qabstractanimation.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qanimationgroup.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpauseanimation.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpropertyanimation.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvariantanimation.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qeasingcurve.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtextcodec.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qendian.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlibraryinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qdatetime.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbuffer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qdir.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfileinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qdiriterator.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfileselector.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QObject \
-		../QtRegistration/chatclient.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothserver.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothSocket \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothServiceInfo \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothservicediscoveryagent.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothDeviceDiscoveryAgent \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothdevicediscoveryagent.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothDeviceInfo \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothdeviceinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QStringList \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlockfile.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qloggingcategory.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qprocess.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothlocaldevice.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothHostInfo \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QTimer \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qresource.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsavefile.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsettings.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstandardpaths.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstorageinfo.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtemporarydir.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QScopedPointer \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtemporaryfile.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qabstractproxymodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qidentityproxymodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringlistmodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qjsonarray.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qjsonvalue.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qjsondocument.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qjsonobject.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qeventloop.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbasictimer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcoreapplication.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmath.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmetaobject.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmimedata.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpointer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsharedmemory.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsignalmapper.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsocketnotifier.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsystemsemaphore.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtimer.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbasictimer.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o chat.o ../QtRegistration/chat.cpp
-
-chatclient.o: ../QtRegistration/chatclient.cpp ../QtRegistration/chatclient.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothserviceinfo.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothglobal.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qglobal.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qconfig.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfeatures.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsystemdetection.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qprocessordetection.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcompilerdetection.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtypeinfo.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtypetraits.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qisenum.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsysinfo.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlogging.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qflags.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbasicatomic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qgenericatomic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_cxx11.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_gcc.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_msvc.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv7.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv6.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv5.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_ia64.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_x86.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_unix.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qglobalstatic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmutex.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qnumeric.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qversiontagging.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothUuid \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothuuid.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QtGlobal \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QMetaType \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmetatype.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbytearray.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qrefcount.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qnamespace.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qarraydata.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstring.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qchar.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringbuilder.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvarlengtharray.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcontainerfwd.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qalgorithms.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobjectdefs.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QUuid \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/quuid.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QDebug \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qdebug.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qhash.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qiterator.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlist.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qhashfunctions.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpair.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbytearraylist.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringlist.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qregexp.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringmatcher.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmap.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtextstream.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qiodevice.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobject.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcoreevent.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qscopedpointer.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobject_impl.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlocale.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvariant.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qshareddata.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvector.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpoint.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qset.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcontiguouscache.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothAddress \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothaddress.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QByteArray \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QString \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QList \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QSharedPointer \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsharedpointer.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QVariant \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QObject \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothsocket.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetooth.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtNetwork/qabstractsocket.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o chatclient.o ../QtRegistration/chatclient.cpp
-
-chatserver.o: ../QtRegistration/chatserver.cpp ../QtRegistration/chatserver.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothserviceinfo.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothglobal.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qglobal.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qconfig.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfeatures.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsystemdetection.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qprocessordetection.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcompilerdetection.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtypeinfo.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtypetraits.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qisenum.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsysinfo.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlogging.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qflags.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbasicatomic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qgenericatomic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_cxx11.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_gcc.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_msvc.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv7.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv6.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_armv5.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_ia64.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_x86.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qatomic_unix.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qglobalstatic.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmutex.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qnumeric.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qversiontagging.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothUuid \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothuuid.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QtGlobal \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QMetaType \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmetatype.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbytearray.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qrefcount.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qnamespace.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qarraydata.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstring.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qchar.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringbuilder.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvarlengtharray.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcontainerfwd.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qalgorithms.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobjectdefs.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QUuid \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/quuid.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QDebug \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qdebug.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qhash.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qiterator.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlist.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qhashfunctions.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpair.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbytearraylist.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringlist.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qregexp.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstringmatcher.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmap.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtextstream.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qiodevice.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobject.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcoreevent.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qscopedpointer.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qobject_impl.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlocale.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvariant.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qshareddata.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qvector.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpoint.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qset.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcontiguouscache.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothAddress \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothaddress.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QByteArray \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QString \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QList \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QSharedPointer \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsharedpointer.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QVariant \
-		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/QObject \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtranslator.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qwineventnotifier.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmimedatabase.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmimetype.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfactoryinterface.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlibrary.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qplugin.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qpluginloader.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qabstractstate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qabstracttransition.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qeventtransition.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfinalstate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qhistorystate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsignaltransition.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstatemachine.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qexception.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfuture.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfutureinterface.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qrunnable.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qresultstore.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qfuturewatcher.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qreadwritelock.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qsemaphore.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qthread.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qthreadpool.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qthreadstorage.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qwaitcondition.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qarraydataops.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qarraydatapointer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbitarray.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qbytearraymatcher.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcache.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcollator.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcommandlineoption.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcommandlineparser.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qcryptographichash.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qelapsedtimer.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qlinkedlist.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qqueue.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qregularexpression.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qstack.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtimeline.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtimezone.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qversionnumber.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qxmlstream.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtCore/qtcoreversion.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsql.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqldatabase.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqldriver.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqldriverplugin.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlerror.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlfield.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlindex.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlrecord.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlquery.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlresult.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlquerymodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qitemdelegate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qvalidator.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtGui/qicon.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qslider.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qstyle.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qtabbar.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qrubberband.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qframe.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qlistview.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtWidgets/qcombobox.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qsqltablemodel.h \
+		../../Qt5.6.3/5.6.3/gcc_64/include/QtSql/qtsqlversion.h \
+		../QtRegistration/chatclient.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetoothserver.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/qbluetooth.h \
 		../../Qt5.6.3/5.6.3/gcc_64/include/QtBluetooth/QBluetoothSocket \
@@ -4998,9 +5214,6 @@ moc_allusers.o: moc_allusers.cpp
 
 moc_helloworldcontroller.o: moc_helloworldcontroller.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_helloworldcontroller.o moc_helloworldcontroller.cpp
-
-moc_chat.o: moc_chat.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_chat.o moc_chat.cpp
 
 moc_chatclient.o: moc_chatclient.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_chatclient.o moc_chatclient.cpp

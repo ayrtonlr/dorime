@@ -19,7 +19,6 @@ SOURCES += main.cpp\
     registration.cpp \
     allusers.cpp \
     helloworldcontroller.cpp \
-    chat.cpp \
     chatclient.cpp \
     chatserver.cpp
 
@@ -27,14 +26,12 @@ HEADERS  += mainwindow.h \
     registration.h \
     allusers.h \
     helloworldcontroller.h \
-    chat.h \
     chatclient.h \
     chatserver.h
 
 FORMS    += mainwindow.ui \
     registration.ui \
-    allusers.ui \
-    chat.ui
+    allusers.ui
 
 RESOURCES +=
 

@@ -2,6 +2,8 @@
 #define HELLOWORLDCONTROLLER_H
 
 #include "httprequesthandler.h"
+#include <QtSql>
+#include <QDebug>
 
 using namespace stefanfrings;
 
