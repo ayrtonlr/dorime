@@ -5,6 +5,7 @@
 #include <QtCore>
 #include <QMessageBox>
 #include "ui_mainwindow.h"
+#include "chatclient.h"
 #include <qbluetoothserviceinfo.h>
 #include <qbluetoothsocket.h>
 #include <qbluetoothhostinfo.h>

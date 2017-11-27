@@ -3,8 +3,6 @@
 #include "registration.h"
 #include "allusers.h"
 #include "chatserver.h"
-#include "chatclient.h"
-
 #include <qbluetoothuuid.h>
 #include <qbluetoothserver.h>
 #include <qbluetoothservicediscoveryagent.h>

@@ -41,6 +41,7 @@
 #ifndef CHATSERVER_H
 #define CHATSERVER_H
 #include <QMessageBox>
+#include "chatclient.h"
 #include <qbluetoothserviceinfo.h>
 #include <qbluetoothaddress.h>
 #include <QtSql>

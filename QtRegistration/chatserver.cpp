@@ -37,9 +37,8 @@
 ** $QT_END_LICENSE$
 **
 ****************************************************************************/
-
+#include "ui_mainwindow.h"
 #include "chatserver.h"
-#include "chatclient.h"
 #include <qbluetoothserver.h>
 #include <qbluetoothsocket.h>
 #include <qbluetoothlocaldevice.h>
@@ -72,8 +71,6 @@ void ChatServer::startServer(const QBluetoothAddress& localAdapter)
         return;
     }
     //! [Create the server]
-
-    //serviceInfo.setAttribute(QBluetoothServiceInfo::ServiceRecordHandle, (uint)0x00010010);
 
     //! [Class Uuuid must contain at least 1 entry]
     QBluetoothServiceInfo::Sequence classId;
@@ -189,8 +186,25 @@ void ChatServer::readSocket()
         return;
     QByteArray line = socket->readLine().trimmed();
     //emit messageReceived(socket->peerName(),
-                        //QString::fromUtf8(line.constData(), line.length()));
+      //                  QString::fromUtf8(line.constData(), line.length()));
     str = line.data();
+
+    if(str.contains("logoutuser", Qt::CaseInsensitive))
+    {
+        str.remove(0, 10);
+        qDebug() << str;
+        QSqlQuery qrya;
+        qrya.prepare("UPDATE people SET password=(:logged) WHERE name = (:name)");
+        qrya.bindValue(":name", str);
+        qrya.bindValue(":logged", 0);
+        if (qrya.exec())
+        {
+            qDebug() << "ok";
+            str = "";
+        }
+    }
+
+
     QSqlQuery query;
     query.prepare("SELECT name,hour1,hour2 FROM people WHERE name = (:name)");
     query.bindValue(":name", str);
