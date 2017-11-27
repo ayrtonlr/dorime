@@ -15,9 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
@@ -36,12 +34,8 @@ public:
     QGroupBox *localAdapterBox;
     QRadioButton *firstAdapter;
     QRadioButton *secondAdapter;
-    QPushButton *pushButton_4;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
-    QHBoxLayout *horizontalLayout;
-    QLineEdit *sendText;
-    QPushButton *sendButton;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -58,7 +52,7 @@ public:
         chat = new QTextEdit(centralWidget);
         chat->setObjectName(QStringLiteral("chat"));
 
-        gridLayout->addWidget(chat, 4, 0, 1, 1);
+        gridLayout->addWidget(chat, 3, 0, 1, 1);
 
         localAdapterBox = new QGroupBox(centralWidget);
         localAdapterBox->setObjectName(QStringLiteral("localAdapterBox"));
@@ -71,16 +65,6 @@ public:
 
         gridLayout->addWidget(localAdapterBox, 0, 0, 1, 1);
 
-        pushButton_4 = new QPushButton(centralWidget);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
-        pushButton_4->setSizePolicy(sizePolicy);
-
-        gridLayout->addWidget(pushButton_4, 3, 0, 1, 1);
-
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
 
@@ -90,22 +74,6 @@ public:
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
 
         gridLayout->addWidget(pushButton_2, 2, 0, 1, 1);
-
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        sendText = new QLineEdit(centralWidget);
-        sendText->setObjectName(QStringLiteral("sendText"));
-
-        horizontalLayout->addWidget(sendText);
-
-        sendButton = new QPushButton(centralWidget);
-        sendButton->setObjectName(QStringLiteral("sendButton"));
-
-        horizontalLayout->addWidget(sendButton);
-
-
-        gridLayout->addLayout(horizontalLayout, 5, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
@@ -123,10 +91,8 @@ public:
         localAdapterBox->setTitle(QApplication::translate("MainWindow", "Local Bluetooth Adapter", Q_NULLPTR));
         firstAdapter->setText(QApplication::translate("MainWindow", "Default", Q_NULLPTR));
         secondAdapter->setText(QString());
-        pushButton_4->setText(QApplication::translate("MainWindow", "Log", Q_NULLPTR));
         pushButton->setText(QApplication::translate("MainWindow", "Register", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("MainWindow", "All Users", Q_NULLPTR));
-        sendButton->setText(QApplication::translate("MainWindow", "Send", Q_NULLPTR));
     } // retranslateUi
 
 };

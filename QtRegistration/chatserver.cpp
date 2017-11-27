@@ -192,14 +192,12 @@ void ChatServer::readSocket()
     if(str.contains("logoutuser", Qt::CaseInsensitive))
     {
         str.remove(0, 10);
-        qDebug() << str;
         QSqlQuery qrya;
         qrya.prepare("UPDATE people SET password=(:logged) WHERE name = (:name)");
         qrya.bindValue(":name", str);
         qrya.bindValue(":logged", 0);
         if (qrya.exec())
         {
-            qDebug() << "ok";
             str = "";
         }
     }

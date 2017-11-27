@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     setFixedSize(geometry().width(), geometry().height());
 
-    connect(ui->sendButton, SIGNAL(clicked()), this, SLOT(sendClicked()));
+    //connect(ui->sendButton, SIGNAL(clicked()), this, SLOT(sendClicked()));
 
     localAdapters = QBluetoothLocalDevice::allDevices();
     if (localAdapters.count() < 2) {
@@ -121,6 +121,7 @@ void MainWindow::clientDisconnected()
 
 
 //! [sendClicked]
+/*
 void MainWindow::sendClicked()
 {
     ui->sendButton->setEnabled(false);
@@ -134,6 +135,7 @@ void MainWindow::sendClicked()
     ui->sendText->setEnabled(true);
     ui->sendButton->setEnabled(true);
 }
+*/
 //! [sendClicked]
 
 //! [showMessage]

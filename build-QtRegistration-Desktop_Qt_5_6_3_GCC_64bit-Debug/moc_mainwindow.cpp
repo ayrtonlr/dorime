@@ -111,7 +111,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->on_pushButton_clicked(); break;
         case 2: _t->on_pushButton_2_clicked(); break;
         //case 3: _t->connectClicked(); break;
-        case 4: _t->sendClicked(); break;
+        //case 4: _t->sendClicked(); break;
         case 5: _t->showMessage((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
         case 6: _t->clientConnected((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 7: _t->clientDisconnected((*reinterpret_cast< const QString(*)>(_a[1]))); break;
