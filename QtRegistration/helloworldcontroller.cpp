@@ -16,7 +16,7 @@ void HelloWorldController::service(HttpRequest &request, HttpResponse &response)
 
     response.write("<p>List of names:");
 
-    QSqlQuery query("SELECT name,email,phone FROM people WHERE password=1");
+    QSqlQuery query("SELECT name,email,phone FROM people WHERE intheroom=1");
 
     while (query.next()) {
             QString name = query.value(0).toString();
