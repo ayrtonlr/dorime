@@ -16,7 +16,7 @@ Registration::~Registration()
 
 void Registration::on_pushButton_2_clicked()
 {
-    if(ui->lineEdit_2->text().isEmpty() || ui->lineEdit_3->text().isEmpty()
+    if(ui->lineEdit_2->text().isEmpty()
                 || ui->lineEdit_4->text().isEmpty() || ui->lineEdit_5->text().isEmpty()
                 || ui->timeEdit_2->text().isEmpty() || ui->timeEdit->text().isEmpty())
     {
@@ -55,7 +55,7 @@ void Registration::on_pushButton_2_clicked()
             QSqlQuery qry;
             qry.prepare("INSERT INTO people values(NULL, :name, :intheroom, :email, :phone, :hour1, :hour2)");
             qry.bindValue(":name", ui->lineEdit_2->text());
-            qry.bindValue(":intheroom", ui->lineEdit_3->text());
+            qry.bindValue(":intheroom", 0);
             qry.bindValue(":email", ui->lineEdit_4->text());
             qry.bindValue(":phone", ui->lineEdit_5->text());
             qry.bindValue(":hour1", ui->timeEdit_2->text());

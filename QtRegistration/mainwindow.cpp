@@ -66,12 +66,12 @@ MainWindow::~MainWindow()
 //! [clientConnected clientDisconnected]
 void MainWindow::clientConnected(const QString &name)
 {
-    ui->chat->insertPlainText(QString::fromLatin1("%1 has joined chat.\n").arg(name));
+    ui->chat->insertPlainText(QString::fromLatin1("%1 Connected.\n").arg(name));
 }
 
 void MainWindow::clientDisconnected(const QString &name)
 {
-    ui->chat->insertPlainText(QString::fromLatin1("%1 has left.\n").arg(name));
+    ui->chat->insertPlainText(QString::fromLatin1("%1 Disconnected.\n").arg(name));
 }
 //! [clientConnected clientDisconnected]
 

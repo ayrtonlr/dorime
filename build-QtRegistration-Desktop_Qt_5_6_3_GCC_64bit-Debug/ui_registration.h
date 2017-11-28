@@ -35,14 +35,12 @@ public:
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout_2;
     QLabel *label;
-    QLabel *label_3;
     QLabel *label_4;
     QLabel *label_5;
     QLabel *label_6;
     QLabel *label_7;
     QVBoxLayout *verticalLayout;
     QLineEdit *lineEdit_2;
-    QLineEdit *lineEdit_3;
     QLineEdit *lineEdit_4;
     QLineEdit *lineEdit_5;
     QTimeEdit *timeEdit_2;
@@ -86,11 +84,6 @@ public:
 
         verticalLayout_2->addWidget(label);
 
-        label_3 = new QLabel(Registration);
-        label_3->setObjectName(QStringLiteral("label_3"));
-
-        verticalLayout_2->addWidget(label_3);
-
         label_4 = new QLabel(Registration);
         label_4->setObjectName(QStringLiteral("label_4"));
 
@@ -120,11 +113,6 @@ public:
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
 
         verticalLayout->addWidget(lineEdit_2);
-
-        lineEdit_3 = new QLineEdit(Registration);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
-
-        verticalLayout->addWidget(lineEdit_3);
 
         lineEdit_4 = new QLineEdit(Registration);
         lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
@@ -188,7 +176,6 @@ public:
         Registration->setWindowTitle(QApplication::translate("Registration", "Registration", Q_NULLPTR));
         label_2->setText(QApplication::translate("Registration", "Register", Q_NULLPTR));
         label->setText(QApplication::translate("Registration", "Name", Q_NULLPTR));
-        label_3->setText(QApplication::translate("Registration", "Password", Q_NULLPTR));
         label_4->setText(QApplication::translate("Registration", "Email", Q_NULLPTR));
         label_5->setText(QApplication::translate("Registration", "Phone", Q_NULLPTR));
         label_6->setText(QApplication::translate("Registration", "Hour1", Q_NULLPTR));

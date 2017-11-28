@@ -198,6 +198,7 @@ void ChatServer::readSocket()
         qrya.bindValue(":logged", 0);
         if (qrya.exec())
         {
+            emit messageReceived(socket->peerName(),"Door Closed, user:" + str);
             str = "";
         }
     }
@@ -230,6 +231,8 @@ void ChatServer::readSocket()
                if (qry.exec())
                {
                    emit sendMessage("Logged");
+                   emit messageReceived(socket->peerName(),"Door Opened, user:" + str);
+
                }
                else
                {
