@@ -14,7 +14,6 @@ void HelloWorldController::service(HttpRequest &request, HttpResponse &response)
     response.setHeader("Content-Type", "text/html; charset=ISO-8859-1");
     response.write("<html><body>");
 
-
     response.write("<p>List of names:");
 
     QSqlQuery query("SELECT name,email,phone FROM people WHERE password=1");

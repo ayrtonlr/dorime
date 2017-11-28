@@ -53,9 +53,9 @@ void Registration::on_pushButton_2_clicked()
             }
 
             QSqlQuery qry;
-            qry.prepare("INSERT INTO people values(NULL, :name, :password, :email, :phone, :hour1, :hour2)");
+            qry.prepare("INSERT INTO people values(NULL, :name, :intheroom, :email, :phone, :hour1, :hour2)");
             qry.bindValue(":name", ui->lineEdit_2->text());
-            qry.bindValue(":password", ui->lineEdit_3->text());
+            qry.bindValue(":intheroom", ui->lineEdit_3->text());
             qry.bindValue(":email", ui->lineEdit_4->text());
             qry.bindValue(":phone", ui->lineEdit_5->text());
             qry.bindValue(":hour1", ui->timeEdit_2->text());

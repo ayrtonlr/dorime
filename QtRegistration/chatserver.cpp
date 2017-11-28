@@ -193,7 +193,7 @@ void ChatServer::readSocket()
     {
         str.remove(0, 10);
         QSqlQuery qrya;
-        qrya.prepare("UPDATE people SET password=(:logged) WHERE name = (:name)");
+        qrya.prepare("UPDATE people SET intheroom=(:logged) WHERE name = (:name)");
         qrya.bindValue(":name", str);
         qrya.bindValue(":logged", 0);
         if (qrya.exec())
@@ -224,7 +224,7 @@ void ChatServer::readSocket()
                    (t.currentTime().toString() < hour2 ))
            {
                QSqlQuery qry;
-               qry.prepare("UPDATE people SET password=(:logged) WHERE name = (:name)");
+               qry.prepare("UPDATE people SET intheroom=(:logged) WHERE name = (:name)");
                qry.bindValue(":name", str);
                qry.bindValue(":logged", 1);
                if (qry.exec())
